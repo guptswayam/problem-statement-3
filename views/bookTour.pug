@@ -1,0 +1,15 @@
+extends base
+
+block content
+    main.main
+        .user-view__form-container
+            h2.heading-secondary.ma-bt-md=`${tour.name} ( $${tour.price} )`
+            form.form.form-book-tour(data-user=`${user._id}`, data-price=`${tour.price}`, data-tour=`${tour._id}`)
+                .form__group
+                    label.form__label(for='password') Tourist Name
+                    input#tourist.form__input(type='text' placeholder='Name', required, minlength='4')
+                .form__group.ma-bt-lg
+                    label.form__label(for='password-confirm') Tourist Age
+                    input#age.form__input(type='number' placeholder='Age', required, min=15)
+                .form__group.right
+                    button.btn.btn--small.btn--green.pay-now Pay Now

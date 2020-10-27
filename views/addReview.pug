@@ -1,0 +1,15 @@
+extends base
+
+block content
+    main.main
+        .review-form(data-tour=`${tour}` data-user=`${user._id}` data-review=`${review}`)
+            h2.heading-secondary.ma-bt-lg Make Your Review
+            form.form
+                .form__group
+                    label.form__label(for='email') Description
+                    textarea.form__input#desc(name="desc", cols="30", rows="5" placeholder="Description")
+                .form__group.ma-bt-md
+                    label.form__label(for='password') Rating
+                    input#rating.form__input(type='number' placeholder='Rating', required, min=1 max=5)
+                .form__group
+                    button.btn.btn--green(type="submit") Submit

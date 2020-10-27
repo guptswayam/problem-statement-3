@@ -1,0 +1,53 @@
+mixin renderReviews(review)
+    .reviews__card
+        .reviews__avatar
+            img.reviews__avatar-img(src=`/img/users/${review.user.photo}` alt=`${review.user.name}`)
+            h6.reviews__user= review.user.name
+        -if(user&&user._id==review.user.id)
+            -const queryStr=`?tour=${tour._id}&review=${review._id}`
+            a.edit-review-button(href=`/add-review${queryStr}`) Edit Your Review
+            - editReview=false;
+        p.reviews__text= review.review 
+        .reviews__rating
+            each i in [1,2,3,4,5]
+                svg.reviews__star(class= `reviews__star--${review.rating>=i?"active":"inactive"}`)
+                    use(xlink:href='/img/icons.svg#icon-star')
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //- .reviews__card
+    //-     .reviews__avatar
+    //-         img.reviews__avatar-img(src=`/img/users/${review.user.photo}` alt=`${review.user.name}`)
+    //-         h6.reviews__user= review.user.name
+    //-     p.reviews__text= review.review 
+    //-     - const arr=[];
+    //-     - for(let i=1;i<=review.rating;i++)
+    //-         - arr.push(i);
+        
+    //-     .reviews__rating
+    //-         each rating in arr
+    //-             svg.reviews__star.reviews__star--active
+    //-                 use(xlink:href='/img/icons.svg#icon-star')
+

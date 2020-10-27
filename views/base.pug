@@ -1,0 +1,43 @@
+//- doctype html
+//- html
+//-     head
+//-         title Tourism | #{tour}
+//-         link(rel="stylesheet", href="css/style.css")
+//-         link(rel="shortcut icon", href="img/favicon.png", type="image/png")
+//-     body
+//-         h1=tour     
+//-         //- Buffered Code:- It is rendered to the client side
+//-         h2=user.toUpperCase()
+
+//-         //- UnBuffered Code:- It is not rendered to the client side
+//-         - const x=9;
+
+//-         h3=2*x
+//-         p This is some simple text
+
+
+doctype html
+html
+    head
+        block head
+            meta(charset="UTF-8")
+            meta(name="viewport", content="width=device-width, initial-scale=1.0")
+            link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato:300,300i,700")
+            link(rel="stylesheet", href="/css/style.css")       
+            //- first slash denotes that this route starts just after the domain name
+            link(rel="shortcut icon", href="/img/favicon.png", type="image/png")
+            title Tourism App | #{title}
+    body
+        // Header 
+        include _header
+
+        // Content
+        block content
+            h1 The Forest Hiker
+            
+        // Footer
+        include _footer
+
+        script(src="/js/bundle.js")
+
+
