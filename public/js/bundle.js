@@ -9178,6 +9178,14 @@ var userFormPassword = document.querySelector(".form-user-password");
 var resetPassword = document.querySelector(".form-user-reset-password");
 var bookTourForm = document.querySelector(".form-book-tour");
 var reviewForm = document.querySelector(".review-form");
+var searchForm = document.getElementById("search__form");
+
+if (searchForm) {
+  searchForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    location.assign("/?startCity=".concat(document.getElementById("start__city").value));
+  });
+}
 
 if (logOut) {
   logOut.addEventListener("click", _login.logout);
@@ -9357,7 +9365,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58777" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62820" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

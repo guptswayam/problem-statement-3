@@ -15,6 +15,14 @@ const userFormPassword= document.querySelector(".form-user-password");
 const resetPassword= document.querySelector(".form-user-reset-password");
 const bookTourForm= document.querySelector(".form-book-tour");
 const reviewForm= document.querySelector(".review-form");
+const searchForm = document.getElementById("search__form");
+
+if(searchForm){
+    searchForm.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        location.assign(`/?startCity=${document.getElementById("start__city").value}`)
+    })
+}
 
 if(logOut){
     logOut.addEventListener("click",logout);
